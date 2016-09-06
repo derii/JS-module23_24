@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>JavaScript. Module 23-24. Bogdan Derii</title>
+	
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script data-main="js/app" src="js/require.js"></script>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+<body>
+
+	<div id="popup" class="overlay">
+		<div class="popup">
+			<h2>Congratulations me:)</h2>
+			<a class="close" href="#popup">&times;</a>
+			<div class="content">
+				<h3>Hi, GoIT!</h3>
+				<p class="thanks-text">
+					This is the last module for FrontEnd GoIT courses.
+					I am really glad to meet with all of you! And I want to say <span class="thanks">Thank you very much</span> for my mentor Gennadiy
+					Gorbulin and other GoIT teachers for this opportunity.
+					It remains only to pass the final exam and find a job:)
+					See you soon!
+				</p>
+				<img src="img/ava.png" class="thanks-img" alt="we thanks you with my son" />
+				<p class="item-note">Press button "X" and look at my last JS module)</p>
+			</div>
+		</div>
+	</div>
+
+    <script type="text/html" id="wrapper-template">
+        <div class="wrapper">
+            <header>
+				<h1><span>todo list</span></h1>
+			</header>
+            <div class="controlls-block">
+                <div class="controlls">
+                    <input type="text" class="item-value" placeholder="What needs to be done?" maxlength="50">
+                    <button class="item-add">+</button>
+                </div>
+                <ul class="item-list"></ul>
+            </div>
+            <p class="item-note">Double-click to edit list item</p>
+        </div>
+    </script>
+	
+    <script type="text/html" id="list-template">
+        <% for(var i = 0; i < data.length; i++) {%>
+            <li id="<%= i + 1 %>" class="todoitem">
+                <label id="<%= i + 1 %>" class="item-label" data-value="<%= data[i] %>"><%= data[i] %></label>
+                <span class="item-delete" data-value="<%= data[i] %>">×</span>
+                <input id="<%= i + 1 %>" type="text" class="item-new-value" value="">
+            </li>
+        <% } %>
+    </script>
+	
+</body>
+</html>
